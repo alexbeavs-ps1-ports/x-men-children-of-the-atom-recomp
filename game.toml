@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "X-Men - Children of the Atom"
+id = "SLUS-00044"
+players = 1
+exe = "disc/SLUS_000.44"
+disc = "disc/X-Men - Children of the Atom (USA).cue"
+discs = ["disc/X-Men - Children of the Atom (USA).cue"]
+disc_serials = ["SLUS-00044"]
+load_address = "0x80010000"
+entry_pc = "0x800B9C4C"
+text_size = "0x000D0800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "X-Men - Children of the Atom (USA) (Track 1).bin"
+cue_name = "X-Men - Children of the Atom (USA).cue"
+boot_exe = "SLUS_000.44"
+known_sizes = [194239920]
+known_md5 = [
+  "8ec14c9a2a78b328dc8411038460d061",
+]
+known_sha1 = [
+  "d9f338a72183484fc96bcc643849c3a37fcb1bc0",
+]
+known_crc32 = [
+  "56d281d2",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "X-Men - Children of the Atom Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 19
+required_disc_fp = "56bdb80ab804e0eb0873d5a09ea58b9aaccbbc4c4c08cc60ca7fb8276bf6bf6b"

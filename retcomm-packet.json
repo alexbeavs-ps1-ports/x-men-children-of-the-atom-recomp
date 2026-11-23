@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "x-men-children-of-the-atom-psx",
+  "name": "X-Men - Children of the Atom",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "x-men-children-of-the-atom-recomp",
+  "rom_identity": {
+    "crc32": [
+      "56d281d2"
+    ],
+    "md5": [
+      "8ec14c9a2a78b328dc8411038460d061"
+    ],
+    "sha1": [
+      "d9f338a72183484fc96bcc643849c3a37fcb1bc0"
+    ],
+    "disc_serials": [
+      "SLUS-00044"
+    ],
+    "sizes": [
+      194239920
+    ],
+    "filenames": [
+      "X-Men - Children of the Atom (USA).cue",
+      "X-Men - Children of the Atom (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      19
+    ],
+    "disc_fps": [
+      "56bdb80ab804e0eb0873d5a09ea58b9aaccbbc4c4c08cc60ca7fb8276bf6bf6b"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/x-men-children-of-the-atom-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "x-men-children-of-the-atom-*-windows-x64.zip",
+      "linux-x64": "x-men-children-of-the-atom-*-linux-x64.zip",
+      "macos-arm64": "x-men-children-of-the-atom-*-macos-arm64.zip",
+      "macos-x64": "x-men-children-of-the-atom-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "x_men_children_of_the_atom.exe",
+    "linux": "x_men_children_of_the_atom",
+    "macos": "x_men_children_of_the_atom"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/x-men-children-of-the-atom-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
